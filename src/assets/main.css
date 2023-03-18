@@ -1,0 +1,24 @@
+@import './base.css';
+
+.fluid-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.anchor-link {
+  display: flex;
+  align-items: center;
+
+  color: var(--blue500);
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.anchor-link .arrow-icon {
+  margin-left: 6px;
+}
+
+.anchor-link:hover {
+  text-decoration: underline;
+}

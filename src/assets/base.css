@@ -1,0 +1,29 @@
+*{
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+:root {
+  font-size: 10px;
+
+  --support-white: #FFFFFF;
+  --support-black: #000000;
+
+  --gray100: #DDDDDD;
+  --gray900: #333333;
+
+  --green500: #079C48;
+  --green900: #056E33;
+  --blue500: #2D56C8;
+  --blue100: #EFF2FB;
+}
+
+body {
+  font-family:Roboto, 'sans-serif';
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
