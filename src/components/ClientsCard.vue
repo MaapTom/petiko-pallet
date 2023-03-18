@@ -1,12 +1,27 @@
 <script setup>
-
+import golImage from '../assets/images/gol.png';
+import csnImage from '../assets/images/csn.png';
 import ambevImage from '../assets/images/ambev.png';
+import petikoImage from '../assets/images/petiko.png';
+import comgasImage from '../assets/images/comgas.png';
+import atacadaoImage from '../assets/images/atacadao.png';
+import drogaBrasilImage from '../assets/images/droga-brasil.png';
 
 const props = defineProps({
   altImage: String,
   typeImage: String,
   clientDepoiment: String,
 })
+
+const currentImage = {
+  golImage,
+  csnImage,
+  ambevImage,
+  petikoImage,
+  comgasImage,
+  atacadaoImage,
+  drogaBrasilImage
+}
 
 </script>
 
@@ -16,7 +31,7 @@ const props = defineProps({
     :class="{'depoiment-active': props?.clientDepoiment}"
   >
     <div class="image-container">
-      <img :src="ambevImage" :alt="props.altImage + ' logomarca'"/>
+      <img :src="currentImage[props.typeImage]" :alt="props.altImage + ' logomarca'"/>
     </div>
     <i v-if="props.clientDepoiment">"{{ clientDepoiment }}"</i>
   </div>
