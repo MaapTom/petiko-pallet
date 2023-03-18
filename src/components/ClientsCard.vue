@@ -1,5 +1,7 @@
 <script setup>
 
+import ambevImage from '../assets/images/ambev.png';
+
 const props = defineProps({
   altImage: String,
   typeImage: String,
@@ -14,7 +16,7 @@ const props = defineProps({
     :class="{'depoiment-active': props?.clientDepoiment}"
   >
     <div class="image-container">
-      <img :src="props.typeImage" :alt="props.altImage + ' logomarca'"/>
+      <img :src="ambevImage" :alt="props.altImage + ' logomarca'"/>
     </div>
     <i v-if="props.clientDepoiment">"{{ clientDepoiment }}"</i>
   </div>
