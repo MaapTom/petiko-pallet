@@ -7,8 +7,6 @@ const props = defineProps({
 })
 
 const currentImage = props.typeImage;
-console.log(currentImage)
-
 </script>
 
 <template>
@@ -19,7 +17,6 @@ console.log(currentImage)
     <div class="image-container">
       <img :src="currentImage" :alt="props.altImage + ' logomarca'"/>
     </div>
-    <img src="../assets/images/Pallet-hero-alternative.png" alt="">
     <i v-if="props.clientDepoiment">"{{ clientDepoiment }}"</i>
   </div>
 </template>
