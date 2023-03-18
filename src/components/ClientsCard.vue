@@ -6,7 +6,6 @@ const props = defineProps({
   clientDepoiment: String,
 })
 
-const currentImage = props.typeImage;
 </script>
 
 <template>
@@ -15,7 +14,7 @@ const currentImage = props.typeImage;
     :class="{'depoiment-active': props?.clientDepoiment}"
   >
     <div class="image-container">
-      <img :src="currentImage" :alt="props.altImage + ' logomarca'"/>
+      <img :src="props.typeImage" :alt="props.altImage + ' logomarca'"/>
     </div>
     <i v-if="props.clientDepoiment">"{{ clientDepoiment }}"</i>
   </div>

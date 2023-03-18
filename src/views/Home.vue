@@ -93,31 +93,31 @@ const { width } = useWindowSize()
         <div class="grid-cards">
           <ClientsCard
             altImage="Ambev"
-            typeImage="../assets/images/ambev.png"
+            typeImage="/assets/images/ambev.png"
           />
           <ClientsCard
             altImage="Atacadão"
-            typeImage="../assets/images/atacadao.png"
+            typeImage="/assets/images/atacadao.png"
           />
           <ClientsCard
             altImage="Comgas"
-            typeImage="../assets/images/comgas.png"
+            typeImage="/assets/images/comgas.png"
           />
           <ClientsCard
             altImage="Gol viagens"
-            typeImage="../assets/images/gol.png"
+            typeImage="/assets/images/gol.png"
           />
           <ClientsCard
             altImage="Droga Brasil"
-            typeImage="../assets/images/droga-brasil.png"
+            typeImage="/assets/images/droga-brasil.png"
           />
           <ClientsCard
             altImage="CSN"
-            typeImage="../assets/images/csn.png"
+            typeImage="/assets/images/csn.png"
           />
           <ClientsCard
             altImage="Petiko"
-            typeImage="../assets/images/petiko.png"
+            typeImage="/assets/images/petiko.png"
             clientDepoiment="Garante a preservação dos produtos dos clientes. Super parceiro!"
           />
         </div>
