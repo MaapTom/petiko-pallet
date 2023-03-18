@@ -1,7 +1,8 @@
 <script setup>
 import { RouterLink } from 'vue-router'
 import { useWindowSize } from '@vueuse/core'
-import { PhArrowRight } from '@phosphor-icons/vue'
+import { PhArrowRight, PhHeartStraight, PhRecycle } from '@phosphor-icons/vue'
+import Separator from '../components/Separator.vue'
 import ClientsCard from '../components/ClientsCard.vue'
 import BenefitsIcon from '../components/BenefitsIcon.vue'
 import ButtonPrimary from '../components/ButtonPrimary.vue'
@@ -42,7 +43,7 @@ const { width } = useWindowSize()
 
     <section class="fluid-container" id="quality-section">
       <div class="benefits">
-        <h3 class="quality-title">Produtos de <span>qualidade</span> para a <span>satisfação</span> dos clientes</h3>
+        <h2 class="quality-title">Produtos de <span>qualidade</span> para a <span>satisfação</span> dos clientes</h2>
         <ul class="list-items">
           <li class="benefit-item">
             <BenefitsIcon
@@ -89,7 +90,7 @@ const { width } = useWindowSize()
         </ul>
       </div>
       <div class=clients>
-        <h3 class="quality-title">Clientes satisfeitos de negócios <span>bem sucedidos</span></h3>
+        <h2 class="quality-title">Clientes satisfeitos de negócios <span>bem sucedidos</span></h2>
         <div class="grid-cards">
           <ClientsCard
             altImage="Ambev"
@@ -120,6 +121,137 @@ const { width } = useWindowSize()
             typeImage="petikoImage"
             clientDepoiment="Garante a preservação dos produtos dos clientes. Super parceiro!"
           />
+        </div>
+      </div>
+    </section>
+
+    <section id="ecology-section">
+      <div class="container-ecology">
+        <h2 class="ecology-title">
+          Processos <span>sustentáveis</span>,<br> para um mundo mais <span>sustentável</span>
+        </h2>
+        <div class="actions">
+          <div class="container-ecology-image">
+            <template v-if="width > 820">
+              <img src="../assets/images/ecology-portait.jpg" alt="Pallets reutilizado para plantas">
+            </template>
+            <template v-else>
+              <img src="../assets/images/ecology-landscape.jpg" alt="Pallets reutilizado para plantas">
+            </template>
+          </div>
+          <ul class="list-actions">
+            <li class="ecology-item">
+              <h3 class="ecology-list-title">
+                <PhHeartStraight
+                  size="32"
+                  color="#079C48"
+                  class="list-icon"
+                />
+                <span>
+                  Ciclo sustentável do inicio ao fim
+                </span>
+              </h3>
+              <p class="ecology-list-paragraph">
+                Toda nossa matéria-prima tem origem confiável, e não
+                envolve métodos que agridem a natureza. Além disso, 
+                as empresas clientes podem contar com a nossa ajuda
+                no descarte sustentável dos paletts.
+              </p>
+              <RouterLink 
+                to=""
+                class="anchor-link"
+              >
+                <span>
+                  Saiba mais
+                </span>
+                <PhArrowRight
+                  size="20"
+                  color="#2D56C8"
+                  class="arrow-icon"
+                />
+              </RouterLink>
+            </li>
+            <li class="ecology-item">
+              <h3 class="ecology-list-title">
+                <PhRecycle
+                  size="32"
+                  color="#079C48"
+                  class="list-icon"
+                />
+                <span>
+                  Parceria com instituições
+                </span>
+              </h3>
+              <p class="ecology-list-paragraph">
+                Nossa empresa é afiliada a diversas instituições de apoio 
+                a criança e aos mais necessitados, pois acreditamos que
+                não só a natureza precisa de cuidado.
+              </p>
+              <RouterLink 
+                to=""
+                class="anchor-link"
+              >
+                <span>
+                  Saiba mais
+                </span>
+                <PhArrowRight
+                  size="20"
+                  color="#2D56C8"
+                  class="arrow-icon"
+                />
+              </RouterLink>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="recall" class="fluid-container"> 
+      <div class="container-recall">
+        <div class="call-to-action">
+          <h2 class="title-call">Estabilidade, resistência e qualidade</h2>
+          <p class="paragraph-call">
+            Não se trata da qualidade dos nossos pallets,
+            mas da nossa dedicação para melhor auxilia-lo.
+          </p>
+          <ButtonPrimary
+            color="--green500"
+            size-button="lg"
+            text-value="Leia sobre nós"
+          />
+        </div>
+        <Separator
+          color="--gray100"
+          :height="width >= 1200 ? 186 : 2"
+          :width="width >= 1200 ? 2 : 186"
+        />
+        <div class="call-to-action">
+          <h2 class="title-call">Entrega rápida, material seguro e confiável</h2>
+          <p class="paragraph-call">
+            Os melhores pallets de sustenção de carga do mercado, 
+            faça um orçamento e sinta a qualidade.
+          </p>
+          <div class="buttons-container">
+            <ButtonPrimary
+              color="--blue500"
+              size-button="lg"
+              text-value="Faça um orçamento"
+            />
+            <h3>ou</h3>
+            <RouterLink 
+              to=""
+              class="anchor-link"
+            >
+              <span>
+                Veja nossos produtos
+              </span>
+              <PhArrowRight
+                size="20"
+                color="#2D56C8"
+                class="arrow-icon"
+              />
+            </RouterLink>
+          </div>
         </div>
       </div>
     </section>
@@ -214,6 +346,7 @@ const { width } = useWindowSize()
   color: var(--gray900);
   font-size: 1.6rem;
   line-height: 2.4rem;
+  z-index: 99;
 }
 
 .quality-icon {
@@ -224,10 +357,11 @@ const { width } = useWindowSize()
 .benefit-item + .benefit-item .quality-icon::after {
   content: '';
   position: absolute;
-  top: -16px;
+  top: -24px;
   left: 50%;
   width: 2px;
-  height: 16px;
+  height: 36px;
+  z-index: -1;
 
   background-color: var(--gray100);
 }
@@ -246,6 +380,126 @@ const { width } = useWindowSize()
 
 .grid-cards .card-container:last-child {
   grid-column: span 3;
+}
+
+/* Ecology section */
+
+#ecology-section {
+  align-content: center;
+  flex-direction: column;
+  max-width: 883px;
+  max-height: 564px;
+  margin: 100px auto;
+}
+
+.container-ecology {
+  margin: 0 56px;
+}
+
+.ecology-title {
+  justify-content: start;
+  margin-bottom: 36px;
+  color: var(--support-black);
+  font-weight: 500;
+  font-size: clamp(2rem, 1.5vw, 3rem);
+  line-height: clamp(2.4rem, 1.7vw, 1.7vw);
+}
+
+.ecology-title span {
+  color: var(--green900);
+}
+
+.actions {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 80px;
+}
+
+.container-ecology-image img{
+  display: block;
+  max-width: 100%;
+}
+
+.list-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 54px;
+}
+
+.ecology-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  gap: 16px;
+}
+
+.ecology-list-title {
+  display: flex;
+  align-items: center;
+  color: var(--support-black);
+  font-size: clamp(1.6rem, 1.7rem, 2rem);;
+  line-height: auto;
+}
+
+.list-icon {
+  margin-right: 6px;
+}
+
+.ecology-list-paragraph {
+  max-width: 460px;
+  color: var(--gray900);
+  font-size: 1.6rem;
+  line-height: 24px;
+}
+
+/* Recall */
+
+#recall {
+  display: flex;
+  justify-content: center;
+  margin: 180px 56px;
+}
+
+.container-recall {
+  display: flex;
+  align-items: center;
+  gap: 42px;
+  flex-wrap: wrap;
+}
+
+.call-to-action {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.title-call {
+  font-size: clamp(2rem, 2.4rem, 2.4rem);
+  font-weight: 700;
+  line-height: 28px;
+  text-align: center;
+}
+
+.paragraph-call {
+  max-width: 46ch;
+  color: var(--gray900);
+  font-size: 1.6rem;
+  line-height: 24px;
+  text-align: center;
+}
+
+.buttons-container {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+h3 {
+  color: var(--gray900);
+  font-size: 1.6rem;
+  font-weight: 500;
 }
 
 @media(max-width: 1200px) {
@@ -273,6 +527,14 @@ const { width } = useWindowSize()
     overflow: scroll;
   }
 
+  .container-recall {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 42px;
+    flex-wrap: wrap;
+  }
+
   .grid-cards .card-container:last-child {
     grid-column: 1;
   }
@@ -297,6 +559,26 @@ const { width } = useWindowSize()
   .container-hero-image {
     max-width: 100vw;
   }
+
+  .container-ecology {
+    margin: 0 36px;
+  }
+
 }
 
+@media(max-width: 820px) {
+  #ecology-section {
+    width: 100%;
+  }
+
+  .actions {
+    align-items: center;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .ecology-list-paragraph {
+    width: 100%;
+  }
+}
 </style>
