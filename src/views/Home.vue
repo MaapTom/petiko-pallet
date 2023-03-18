@@ -93,7 +93,7 @@ const { width } = useWindowSize()
         <div class="grid-cards">
           <ClientsCard
             altImage="Ambev"
-            typeImage="/assets/images/ambev.png"
+            typeImage="../assets/images/Pallet-hero-alternative.png"
           />
           <ClientsCard
             altImage="Atacadão"
