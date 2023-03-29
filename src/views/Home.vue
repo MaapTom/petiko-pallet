@@ -2,6 +2,7 @@
 import { RouterLink } from 'vue-router'
 import { useWindowSize } from '@vueuse/core'
 import { PhArrowRight, PhHeartStraight, PhRecycle } from '@phosphor-icons/vue'
+import Footer from '../components/Footer.vue'
 import Separator from '../components/Separator.vue'
 import ClientsCard from '../components/ClientsCard.vue'
 import BenefitsIcon from '../components/BenefitsIcon.vue'
@@ -25,8 +26,8 @@ const { width } = useWindowSize()
             <h2>Madeira, plástico ou metal. Escolha a melhor opção para o seu negócio, e nós entregamos.</h2>
             <ButtonPrimary
               color="--green500"
-              size-button="lg"
-              text-value="Veja nossos produtos"
+              sizeButton="lg"
+              textValue="Veja nossos produtos"
             />
         </div>
         </div>
@@ -216,8 +217,8 @@ const { width } = useWindowSize()
           </p>
           <ButtonPrimary
             color="--green500"
-            size-button="lg"
-            text-value="Leia sobre nós"
+            sizeButton="lg"
+            textValue="Leia sobre nós"
           />
         </div>
         <Separator
@@ -234,8 +235,8 @@ const { width } = useWindowSize()
           <div class="buttons-container">
             <ButtonPrimary
               color="--blue500"
-              size-button="lg"
-              text-value="Faça um orçamento"
+              sizeButton="lg"
+              textValue="Faça um orçamento"
             />
             <h3>ou</h3>
             <RouterLink 
@@ -256,9 +257,10 @@ const { width } = useWindowSize()
       </div>
     </section>
   </main>
+  <Footer/>
 </template>
 
-<style>
+<style scoped>
 @import '../assets/main.css';
 
 #main-container {

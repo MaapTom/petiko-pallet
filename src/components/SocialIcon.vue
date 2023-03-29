@@ -1,16 +1,14 @@
 <script setup>
-import Twitter from './icons/social-icons/IconTwitter.vue'
-import Youtube from './icons/social-icons/IconYoutube.vue'
-import Instagram from './icons/social-icons/IconInstagram.vue'
+import { PhInstagramLogo, PhTwitterLogo, PhYoutubeLogo } from '@phosphor-icons/vue'
 
 defineProps({
   typeIcon: String,
 });
 
 const currentIcon = {
-  Twitter,
-  Youtube,
-  Instagram
+  PhTwitterLogo,
+  PhYoutubeLogo,
+  PhInstagramLogo
 };
 
 </script>
@@ -20,7 +18,11 @@ const currentIcon = {
     href=""
     class="link-social"
   >
-    <component :is="currentIcon[typeIcon]"></component>
+    <component
+      :is="currentIcon[typeIcon]"
+      size="24"
+      color="white"
+    ></component>
   </a>
 </template>
 
@@ -28,7 +30,12 @@ const currentIcon = {
 @import '../assets/main.css';
 
 .link-social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: max-content;
+  padding: 2px 3px;
   background-color: var(--blue500);
-  border-radius: 10px;
+  border-radius: 4px;
 }
 </style>

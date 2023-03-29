@@ -30,7 +30,12 @@ function toggleMenu() {
 <template>
   <header id="header-container" class="fluid-container">
     <RouterLink to="/">
-      <Logo class="logo" width="98" height="32"/>
+      <Logo
+        class="logo"
+        width="98"
+        height="32"
+        colorStyle="black"
+      />
     </RouterLink>
     <a 
       @click="toggleMenu"
@@ -68,6 +73,7 @@ function toggleMenu() {
           sizeButton="md"
           color="--green500"
           @click="toggleMenu"
+          linkTo="/"
         />
       </ul>
     </nav>
